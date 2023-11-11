@@ -20,15 +20,15 @@ let senderMailMsg = mailGenerator.generate(senderMsg(name , message , senderMail
 let receiverMailMsg = mailGenerator.generate(receiversMsg(name , email , message , senderName));
 
 let mailOptions = {
-    from: 'faithadetona@gmail.com',
+    from: 'sendspear@gmail.com',
     to: email,
     subject: 'Thanks For Reaching Out', 
     html: senderMailMsg,
 };
 
 let mailOptions2 = {
-    from: 'faithadetona@gmail.com',
-    to: `${senderMail}`,
+    from: 'sendspear@gmail.com',
+    to: senderMail,
     subject: `New Message From ${name}`	,
     html: receiverMailMsg,
 };
@@ -41,7 +41,6 @@ await transporter.sendMail(mailOptions2 , (err , info) => {
             messageInfo: err,
             
         })
-        console.log(senderMail);
     } else {
         res.status(200).json({
             status: 'success',
