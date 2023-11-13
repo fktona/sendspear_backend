@@ -16,7 +16,7 @@ const {email, name , message} = req.body;
 const {userMail , userName} = req.query;
 
 
-let userMailMsg = mailGenerator.generate(senderMsg(name , message , userMail));
+let userMailMsg = mailGenerator.generate(senderMsg(name , message , userMail , userName));
 let receiverMailMsg = mailGenerator.generate(receiversMsg(name , email , message , userName));
 
 let mailOptions = {
