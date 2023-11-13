@@ -6,7 +6,7 @@ const message = async (req , res) => {
     if(!userMail || !userName) {
         return res.status(400).json({
             status: 'error',
-            message: 'No sender email',
+            message: 'No user email or name',
         })
     }
     const emailRegex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
