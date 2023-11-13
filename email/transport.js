@@ -5,8 +5,8 @@ const {senderMsg , receiversMsg} = require('./body');
 const mailGenerator = new Mailgen({
     theme: 'default',
     product: {
-        name: 'Faith Adetona',
-        link: 'https://faithportfolio-first.netlify.app'
+        name: 'Send Spear',
+        link: 'https://documenter.getpostman.com/view/29260772/2s9YXmWfPQ'
     }
 });
 
