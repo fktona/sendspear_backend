@@ -13,22 +13,22 @@ const mailGenerator = new Mailgen({
 const sendingMail = async (req , res) => {
 
 const {email, name , message} = req.body;
-const {senderMail , senderName} = req.query;
+const {userMail , userName} = req.query;
 
 
-let senderMailMsg = mailGenerator.generate(senderMsg(name , message , senderMail));
-let receiverMailMsg = mailGenerator.generate(receiversMsg(name , email , message , senderName));
+let userMailMsg = mailGenerator.generate(senderMsg(name , message , userMail));
+let receiverMailMsg = mailGenerator.generate(receiversMsg(name , email , message , userName));
 
 let mailOptions = {
     from: 'sendspear@gmail.com',
     to: email,
     subject: 'Thanks For Reaching Out', 
-    html: senderMailMsg,
+    html: userMailMsg,
 };
 
 let mailOptions2 = {
     from: 'sendspear@gmail.com',
-    to: senderMail,
+    to: userMail,
     subject: `New Message From ${name}`	,
     html: receiverMailMsg,
 };

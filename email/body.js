@@ -1,21 +1,24 @@
-const senderMsg = (name , message , senderMail , senderName) => {
+const senderMsg = (name , message , userMail , userName) => {
     return {
         body: {
             name: name,
-            intro: `Thank you for contacting ${senderName}.`,
-            outro: `Your message has been received by ${senderMail}.` ,
+            intro: `Thank you for contacting ${userName}.`,
+            outro: `Your message has been received by ${userMail}.` ,
+            signature: 'Thanks for using SendSpear services',
 
         }
     };
 };
 
-const receiversMsg = (name, email, message , senderName) => {
+const receiversMsg = (name, email, message , userName) => {
     return {
         body: {
-            name: senderName,
+            name: userName,
             intro: `You have a new message from ${name} with email ${email}.`,
             instructions: 'You can check the message below',
             outro: `Message: ${message}`,
+            signature: 'Thanks for using SendSpear services',
+            
         }
     };
 };
